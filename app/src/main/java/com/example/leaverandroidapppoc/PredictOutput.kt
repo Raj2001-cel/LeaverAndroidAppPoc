@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.util.HashMap
 
-class UploadProfile : AppCompatActivity() {
+class PredictOutput : AppCompatActivity() {
     @Throws(IOException::class)
     fun uploadProfile(context: Context?, Authorization: String, bitmap: Bitmap, textViewOutput: TextView) {
         val volleyMultipartRequest: VolleyMultipartRequest = object : VolleyMultipartRequest(Method.POST,

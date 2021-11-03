@@ -132,7 +132,7 @@ class Home : AppCompatActivity() {
                 bitmap  = bitmapnew
                 Log.d("bitmap", bitmap.toString())
                 try {
-                    val uploadProfile = UploadProfile()
+                    val uploadProfile = PredictOutput()
                     uploadProfile.uploadProfile(
 
                             applicationContext,
@@ -150,7 +150,7 @@ class Home : AppCompatActivity() {
                 val bitmapImage = bundle!!["data"] as Bitmap?
                 IVPreviewImage?.setImageBitmap(bitmapImage)
                 try {
-                    val uploadProfile = UploadProfile()
+                    val uploadProfile = PredictOutput()
                     if (bitmapImage != null) {
                         uploadProfile.uploadProfile(
 

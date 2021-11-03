@@ -53,6 +53,7 @@ class StartReportActivity : AppCompatActivity() {
             val saveReport = SaveReport()
             saveReport.saveReport(this,token,reportId,senderName,recieverName,totalLeaves,date,numberOfUnhealthyLeaves,numberOfHealthyLeaves)
         }
+
     }
 
 
