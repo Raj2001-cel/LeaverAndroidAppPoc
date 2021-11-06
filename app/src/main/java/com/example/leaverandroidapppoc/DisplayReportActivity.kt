@@ -30,7 +30,7 @@ class DisplayReportActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_report)
         reportId = intent.getLongExtra("reportId", 0)
-        numberOfUnhealthyLeaves = intent.getLongExtra("numberOfUnhealthyLeaves", 0)
+        numberOfUnhealthyLeaves = intent.getLongExtra("noOfUnhealthyLeaves", 0)
         totalLeaves = intent.getLongExtra("totalLeaves", 0)
         numberOfHealthyLeaves = intent.getLongExtra("noOfHealthyLeaves", 0)
         senderName = intent.getStringExtra("senderName").toString()

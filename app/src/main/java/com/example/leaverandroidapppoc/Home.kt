@@ -24,6 +24,7 @@ class Home : AppCompatActivity() {
     lateinit var galleryBtn: Button
     lateinit var textViewOutput: TextView
     lateinit var floatingActionButtonSave: FloatingActionButton
+    lateinit var allReportBtn:Button
     // One Preview Image
     val reportId:Long?=getRandomReportId()
     var IVPreviewImage: ImageView? = null
@@ -51,6 +52,7 @@ class Home : AppCompatActivity() {
         IVPreviewImage = findViewById(R.id.IVPreviewImage);
         textViewOutput = findViewById(R.id.textView)
         floatingActionButtonSave = findViewById(R.id.saveleaf)
+        allReportBtn = findViewById(R.id.allReportBtn)
         BSelectImage.setOnClickListener { // Do some work here
 
             if (checkAndRequestPermissions()) {
@@ -90,6 +92,11 @@ class Home : AppCompatActivity() {
             reportId?.let { it1 -> getAllLeavesByReportId.getAllLeavesByReportId(this,token, it1) }
 
 
+        }
+
+        allReportBtn.setOnClickListener{
+            val i = Intent(this, ReportActivity::class.java)
+            this.startActivity(i)
         }
 
     }
@@ -132,7 +139,7 @@ class Home : AppCompatActivity() {
                 bitmap  = bitmapnew
                 Log.d("bitmap", bitmap.toString())
                 try {
-                    val uploadProfile = UploadProfile()
+                    val uploadProfile = PredictOutput()
                     uploadProfile.uploadProfile(
 
                             applicationContext,
@@ -150,7 +157,7 @@ class Home : AppCompatActivity() {
                 val bitmapImage = bundle!!["data"] as Bitmap?
                 IVPreviewImage?.setImageBitmap(bitmapImage)
                 try {
-                    val uploadProfile = UploadProfile()
+                    val uploadProfile = PredictOutput()
                     if (bitmapImage != null) {
                         uploadProfile.uploadProfile(
 
